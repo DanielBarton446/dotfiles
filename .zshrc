@@ -101,6 +101,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias WinPython=/mnt/c/Python3.7/python.exe
 alias WinJava=/mnt/c/'Program\ Files/java/jdk-14/bin/java.exe'
+alias openPDF="\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\""
 # other changes by dalton
 # get rid of user@hostname
 prompt_context() {}
