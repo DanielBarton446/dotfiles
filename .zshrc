@@ -99,10 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
+alias WinPython=/mnt/c/Python3.7/python.exe
+alias WinJava=/mnt/c/'Program\ Files/java/jdk-14/bin/java.exe'
 # other changes by dalton
 # get rid of user@hostname
 prompt_context() {}
+
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(class|pdf):source-files' '*:all-files'
 
 # only show the last 3 directories
 prompt_dir() {
@@ -112,3 +115,4 @@ prompt_dir() {
 
 #uncomment if you need ~/.local/bin added to path
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/dotfiles/scripts/:$PATH"
