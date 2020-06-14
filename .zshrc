@@ -105,8 +105,13 @@ alias openPDF="\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe
 # other changes by dalton
 # get rid of user@hostname
 prompt_context() {}
-
+# Vim command autocomplete suggestions ignore class and pdf files
 zstyle ':completion:*:*:vim:*' file-patterns '^*.(class|pdf):source-files' '*:all-files'
+# Allow AutoComplete on all alias commands, REQUIRES zstyle for each
+setopt COMPLETE_ALIASES
+zstyle ':completion:*:*:openPDF:*' file-patterns '*.pdf' 
+zstyle ':completion:*:*:WinPython:*' file-patterns '*.py' 
+zstyle ':completion:*:*:WinJava:*' file-patterns '*.java' 
 
 # only show the last 3 directories
 prompt_dir() {
