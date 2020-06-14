@@ -102,6 +102,7 @@ alias pbpaste='xclip -selection clipboard -o'
 alias WinPython=/mnt/c/Python3.7/python.exe
 alias WinJava=/mnt/c/'Program\ Files/java/jdk-14/bin/java.exe'
 alias openPDF="\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\""
+alias viewLatex=/mnt/c/'Program\ Files/Sumatra/SumatraPDF/SumatraPDF.exe'
 # other changes by dalton
 # get rid of user@hostname
 prompt_context() {}
@@ -112,6 +113,7 @@ setopt COMPLETE_ALIASES
 zstyle ':completion:*:*:openPDF:*' file-patterns '*.pdf' 
 zstyle ':completion:*:*:WinPython:*' file-patterns '*.py' 
 zstyle ':completion:*:*:WinJava:*' file-patterns '*.java' 
+zstyle ':completion:*:*:viewLatex:*' file-patterns '*.pdf' 
 
 # only show the last 3 directories
 prompt_dir() {
