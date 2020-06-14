@@ -15,7 +15,13 @@ set number
 set relativenumber
 set background=dark
 syntax on
-let g:gruvbox_contrast_dark='hard'
+"gruvbox color scheme config
+let g:gruvbox_contrast_dark = 'hard'
+let g:NERDtree = 'right'
+" Open nerdtree on vim startup
+autocmd vimenter * NERDTree
+" Unfocus nerdtree
+autocmd vimenter * wincmd p 
 :colorscheme gruvbox
 highlight ColorColumn ctermbg=DarkGray guibg=lightgray
 set colorcolumn=80
