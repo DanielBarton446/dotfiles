@@ -13,6 +13,21 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
+Plugin 'kien/ctrlp.vim' 
+Plugin 'mileszs/ack.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'dense-analysis/ale'
+Plugin 'tpope/vim-commentary'
+Plugin 'terryma/vim-expand-region'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'junegunn/goyo.vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/vim-gist'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,6 +52,23 @@ set mouse=a
 set number
 set relativenumber
 set background=dark
+" Makes movement between splits easier
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+" Makes nice closing braces
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+" Set tab size
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
 syntax on
 "gruvbox color scheme config
 let g:gruvbox_contrast_dark = 'hard'
