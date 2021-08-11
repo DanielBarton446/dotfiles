@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH="/home/daniel/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,17 +104,29 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#uncomment if you need ~/.local/bin added to path
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/dotfiles/scripts/:$PATH"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias WinPython=/mnt/c/Python3.7/python.exe
 alias WinJava=/mnt/c/'Program\ Files/java/jdk-14/bin/java.exe'
 alias openPDF="\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\""
-alias viewLatex=/mnt/c/'Program\ Files/Sumatra/SumatraPDF/SumatraPDF.exe'
+
 # other changes by dalton
 # get rid of user@hostname
 prompt_context() {}
 # Vim command autocomplete suggestions ignore class and pdf files
-zstyle ':completion:*:*:vim:*' file-patterns '^*.(class|pdf):source-files' '*:all-files'
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(class|pdf|aux|log|o):source-files' ':all-files' 
+# NVim command autocomplete suggestions ignore class and pdf files
+zstyle ':completion:*:*:nvim:*' file-patterns '^*.(class|pdf|aux|log|o):source-files' ':all-files' 
+zstyle -e ':completion::complete:-command-::executables' ignored-patterns '
+  [[ "$PREFIX" == ./* ]] && { reply=(./*(/)) }
+  '
 # Allow AutoComplete on all alias commands, REQUIRES zstyle for each
 setopt COMPLETE_ALIASES
 zstyle ':completion:*:*:openPDF:*' file-patterns '*.pdf' 
@@ -115,12 +134,6 @@ zstyle ':completion:*:*:WinPython:*' file-patterns '*.py'
 zstyle ':completion:*:*:WinJava:*' file-patterns '*.java' 
 zstyle ':completion:*:*:viewLatex:*' file-patterns '*.pdf' 
 
-# only show the last 3 directories
-prompt_dir() {
-  prompt_segment blue $CURRENT_FG '%3~'
-}
+# Remove windows bell sound
+unsetopt BEEP
 
-
-#uncomment if you need ~/.local/bin added to path
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/dotfiles/scripts/:$PATH"
