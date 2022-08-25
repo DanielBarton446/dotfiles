@@ -24,6 +24,8 @@ local vopts = {
 local mappings = {
   ["/"] = { ":CommentToggle<CR>", "Comment" },
   ["gb"] = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle Git Blame" },
+  ["ff"] = { ":Telescope find_files<CR>", "Find Files" },
+  ["fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
 }
 local vmappings = {
   ["/"] = { ":'<,'>CommentToggle<CR>", "Comment" },
