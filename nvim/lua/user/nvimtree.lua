@@ -4,10 +4,9 @@ if not status then
 end
 
 tree.setup({
-  open_on_startup = true,
   view = {
     side = "left",
     width = 20,
-    auto_resize = true
+    adaptive_size = true
   }
 })
