@@ -18,28 +18,39 @@ packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  -- LSP Config
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'hrsh7th/cmp-path'
-  use 'L3MON4D3/LuaSnip' -- snippet engine
-
-  -- lsp associated packages
-  use 'simrat39/inlay-hints.nvim' -- inlay hints for all languages
-  use 'simrat39/rust-tools.nvim' -- inlay rust hints
   use { -- Renaming nicer
     'filipdutescu/renamer.nvim',
     branch = 'master',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  -- Mason for LSP
+
+  -- LSP stuff
   use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
   }
+
+  -- lsp associated packages
+  use 'simrat39/inlay-hints.nvim' -- inlay hints for all languages
+  use 'simrat39/rust-tools.nvim' -- inlay rust hints
+
   -- Harpoon 
   use('theprimeagen/harpoon') 
   -- Formatter/Linter device for Mason

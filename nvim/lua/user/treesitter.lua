@@ -17,6 +17,7 @@ ts.setup {
     "typescript",
     "python",
     "rust",
+    "bash",
     "c",
     "toml",
     "json",
