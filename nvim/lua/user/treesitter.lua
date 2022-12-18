@@ -13,6 +13,8 @@ ts.setup {
     disable = {},
   },
   ensure_installed = {
+    "javascript",
+    "typescript",
     "python",
     "rust",
     "c",

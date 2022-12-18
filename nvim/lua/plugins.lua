@@ -10,6 +10,9 @@ packer.startup(function(use)
   -- Colorscheme
   use 'folke/tokyonight.nvim'
 
+  -- VimBeGood
+  use 'ThePrimeagen/vim-be-good'
+
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -22,12 +25,23 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'hrsh7th/cmp-path'
   use 'L3MON4D3/LuaSnip' -- snippet engine
+
+  -- lsp associated packages
+  use 'simrat39/inlay-hints.nvim' -- inlay hints for all languages
+  use 'simrat39/rust-tools.nvim' -- inlay rust hints
+  use { -- Renaming nicer
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
   -- Mason for LSP
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   }
+  -- Harpoon 
+  use('theprimeagen/harpoon') 
   -- Formatter/Linter device for Mason
   use "jose-elias-alvarez/null-ls.nvim"
   -- Tree Sitter

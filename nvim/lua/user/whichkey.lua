@@ -23,9 +23,18 @@ local vopts = {
 }
 local mappings = {
   ["/"] = { ":CommentToggle<CR>", "Comment" },
+  ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+  ["k"] = { ":lua vim.lsp.buf.hover()<CR>", "Hover (read docos)" },
+  ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+  ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+  ["gs"] = { "[m", "Go to Start of Function" },
+  ["d"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostics" },
   ["gb"] = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle Git Blame" },
+  ["F"] = { ":lua vim.lsp.buf.format()<CR>", "Format Current Buffer" },
   ["ff"] = { ":Telescope find_files<CR>", "Find Files" },
   ["fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
+  ["fb"] = { ":Telescope buffers<CR>", "View Buffers" },
+  ["rn"] = { ":lua require('renamer').rename()<CR>", "Rename a variable" }
 }
 local vmappings = {
   ["/"] = { ":'<,'>CommentToggle<CR>", "Comment" },

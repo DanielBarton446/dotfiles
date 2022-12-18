@@ -64,7 +64,7 @@ protocol.CompletionItemKind = {
 }
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
@@ -77,17 +77,7 @@ nvim_lsp.sourcekit.setup {
   on_attach = on_attach,
 }
 
-nvim_lsp.rust_analyzer.setup({
-  on_attach = on_attach,
-  settings = {
-    ["rust-analyzer"] = {
-      -- Enable formatting on save
-      checkOnSave = {
-        command = "clippy"
-      },
-    }
-  }
-})
+nvim_lsp.texlab.setup({})
 
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
@@ -102,6 +92,15 @@ nvim_lsp.sumneko_lua.setup {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
         checkThirdParty = false
+      },
+      format = {
+        enable = true,
+        -- Put format options here
+        -- NOTE: the value should be STRING!!
+        defaultConfig = {
+          indent_style = "space",
+          indent_size = "2",
+        }
       },
     },
   },
