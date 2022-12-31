@@ -19,6 +19,8 @@ lsp.configure('sumneko_lua', {
     }
 })
 
+lsp.setup_nvim_cmp() -- ensure cmp is initialized
+
 lsp.set_preferences({
     suggest_lsp_servers = true,
     sign_icons = {
@@ -28,12 +30,5 @@ lsp.set_preferences({
       info = " "
     }
 })
-
-lsp.on_attach(function(client)
-  if client.name == "eslint" then
-      vim.cmd.LspStop('eslint')
-      return
-  end
-end)
 
 lsp.setup()
