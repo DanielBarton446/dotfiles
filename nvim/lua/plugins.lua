@@ -49,7 +49,6 @@ packer.startup(function(use)
 
   -- lsp associated packages
   use 'simrat39/inlay-hints.nvim' -- inlay hints for all languages
-  use 'simrat39/rust-tools.nvim' -- inlay rust hints
 
   -- Harpoon 
   use('theprimeagen/harpoon') 
