@@ -23,6 +23,8 @@ local vopts = {
 }
 local mappings = {
   ["/"] = { ":CommentToggle<CR>", "Comment" },
+  ["ee"] = { "<cmd>lua require('telescope.builtin').find_files({search_dirs = {'~/.config/nvim/'}})<cr>",
+    "Search dotfiles" },
   ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
   ["k"] = { ":lua vim.lsp.buf.hover()<CR>", "Hover (read docos)" },
   ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
@@ -34,7 +36,14 @@ local mappings = {
   ["ff"] = { ":Telescope find_files<CR>", "Find Files" },
   ["fg"] = { ":Telescope live_grep<CR>", "Live Grep" },
   ["fb"] = { ":Telescope buffers<CR>", "View Buffers" },
-  ["rn"] = { ":lua require('renamer').rename()<CR>", "Rename a variable" }
+  ["rn"] = { ":lua require('renamer').rename()<CR>", "Rename a variable" },
+  -- Neorg stuff
+  ["nf"] = { ":Telescope neorg find_norg_files<CR>", "Find Norg Files" },
+  ["nh"] = { ":Telescope neorg search_headings<CR>", "Search Headings" },
+  ["ni"] = { ":Telescope neorg insert_file_link<CR>", "Insert File Link" },
+  ["nl"] = { ":Telescope neorg find_linkable<CR>", "Find Linkables" },
+  ["nw"] = { ":Telescope neorg switch_workspace<CR>", "Switch workspaces" },
+
 }
 local vmappings = {
   ["/"] = { ":'<,'>CommentToggle<CR>", "Comment" },

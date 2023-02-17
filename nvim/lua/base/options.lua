@@ -1,6 +1,7 @@
 vim.o.termguicolors = true
 
 local options = {
+  autochdir = true,
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
