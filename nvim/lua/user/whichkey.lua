@@ -27,9 +27,13 @@ local mappings = {
     "Search dotfiles" },
   ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
   ["k"] = { ":lua vim.lsp.buf.hover()<CR>", "Hover (read docos)" },
+
   ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+  ["gD"] = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
   ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-  ["gs"] = { "[m", "Go to Start of Function" },
+  ["gr"] = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+  ["gpr"] = { "<cmd>GHOpenPR<cr>", "Open PR" },
+
   ["d"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostics" },
   ["gb"] = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle Git Blame" },
   ["F"] = { ":lua vim.lsp.buf.format()<CR>", "Format Current Buffer" },
@@ -43,7 +47,6 @@ local mappings = {
   ["ni"] = { ":Telescope neorg insert_file_link<CR>", "Insert File Link" },
   ["nl"] = { ":Telescope neorg find_linkable<CR>", "Find Linkables" },
   ["nw"] = { ":Telescope neorg switch_workspace<CR>", "Switch workspaces" },
-
 }
 local vmappings = {
   ["/"] = { ":'<,'>CommentToggle<CR>", "Comment" },

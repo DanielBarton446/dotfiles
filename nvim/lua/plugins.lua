@@ -17,6 +17,11 @@ packer.startup(function(use)
   use "nvim-neorg/neorg"
   use "nvim-neorg/neorg-telescope" -- telescope integration
 
+  -- GH code reviewing
+  use {
+    'ldelossa/gh.nvim',
+    requires = { { 'ldelossa/litee.nvim' } }
+  }
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -27,7 +32,12 @@ packer.startup(function(use)
     branch = 'master',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-
+  -- Portal (better jumplist)
+  use {
+    "cbochs/portal.nvim",
+    -- Optional dependencies
+    requires = { "cbochs/grapple.nvim" },
+  }
   -- LSP stuff
   use {
     'VonHeikemen/lsp-zero.nvim',

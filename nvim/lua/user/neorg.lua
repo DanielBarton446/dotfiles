@@ -2,11 +2,13 @@ require('neorg').setup {
   load = {
     ["core.defaults"] = {}, -- Defaults
     ["core.norg.concealer"] = {}, -- Pretty icons
+    ["core.norg.esupports.indent"] = {}, -- indent nicely
     ["core.norg.dirman"] = { -- Workspace management
       config = {
         workspaces = {
           work = "~/notes/work/",
-          rust = "~/notes/rust/"
+          rust = "~/notes/rust/",
+          vacation = "~/notes/vacation/"
         },
         -- index = "~/notes/index.norg"
       }

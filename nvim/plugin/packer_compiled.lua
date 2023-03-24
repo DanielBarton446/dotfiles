@@ -154,6 +154,16 @@ _G.packer_plugins = {
     path = "/home/danielb/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neorg = {
+    loaded = true,
+    path = "/home/danielb/.local/share/nvim/site/pack/packer/start/neorg",
+    url = "https://github.com/nvim-neorg/neorg"
+  },
+  ["neorg-telescope"] = {
+    loaded = true,
+    path = "/home/danielb/.local/share/nvim/site/pack/packer/start/neorg-telescope",
+    url = "https://github.com/nvim-neorg/neorg-telescope"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/danielb/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
