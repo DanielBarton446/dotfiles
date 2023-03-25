@@ -1,3 +1,8 @@
+neofetch
+# ensure when quitting ranger, it changes dir
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# start ranger by default
+ranger
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -107,7 +112,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias weather="curl v2.wttr.in/"
+# alias weather="curl 'v2.wttr.in/dayton,Minnesota?m'"
+alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-TERM=xterm-256color
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"
+# add cargo binaries to path
+export PATH="$PATH:$HOME/.cargo/bin"
+export VISUAL=nvim
+export EDITOR="$VISUAL"
