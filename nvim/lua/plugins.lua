@@ -10,9 +10,6 @@ packer.startup(function(use)
   -- Colorscheme
   use 'folke/tokyonight.nvim'
 
-  -- VimBeGood
-  use 'ThePrimeagen/vim-be-good'
-
   -- Note taking
   use "nvim-neorg/neorg"
   use "nvim-neorg/neorg-telescope" -- telescope integration
@@ -22,6 +19,7 @@ packer.startup(function(use)
     'ldelossa/gh.nvim',
     requires = { { 'ldelossa/litee.nvim' } }
   }
+
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -32,12 +30,7 @@ packer.startup(function(use)
     branch = 'master',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  -- Portal (better jumplist)
-  use {
-    "cbochs/portal.nvim",
-    -- Optional dependencies
-    requires = { "cbochs/grapple.nvim" },
-  }
+
   -- LSP stuff
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -105,6 +98,16 @@ packer.startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
+  }
+
+  -- ChatGPT integration
+  use {
+    "jackMort/ChatGPT.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   }
 end
 )
