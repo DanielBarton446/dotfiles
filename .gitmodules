@@ -4,3 +4,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = git@github.com:DanielBarton446/nvim.git
+[submodule "fastfetch"]
+	path = fastfetch
+	url = https://github.com/DanielBarton446/fastfetch
