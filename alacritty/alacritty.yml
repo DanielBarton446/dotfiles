@@ -1,51 +1,10 @@
 font:
-  normal:
-    family: MesloLGS NF
-  bold:
-    family: MesloLGS NF
-  italic:
-    family: MesloLGS NF
-  bolc_italic:
-    family: MesloLGS NF
   size: 16
-
-window:
-  opacity: 1.00
-
-env:
-  TERM: xterm-256color
-
-shell:
-  program: /bin/zsh
-  args:
-    - -c
-    - "tmux"
-
-colors:
-  # Default colors
-  primary:
-    background: '#282a36'
-    foreground: '#f8f8f2'
-
-  # Normal colors
   normal:
-    black: '#000000'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#caa9fa'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#bfbfbf'
-
-  # Bright colors
-  bright:
-    black: '#575b70'
-    red: '#ff6e67'
-    green: '#5af78e'
-    yellow: '#f4f99d'
-    blue: '#caa9fa'
-    magenta: '#ff92d0'
-    cyan: '#9aedfe'
-    white: '#e6e6e6'
-theme: Dracula
+    family: "mononoki Nerd Font Mono"
+  bold:
+    family: "mononoki Nerd Font Mono"
+  italic:
+    family: "mononoki Nerd Font Mono"
+  bolc_italic:
+    family: "mononoki Nerd Font Mono"
