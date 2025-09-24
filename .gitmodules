@@ -7,3 +7,6 @@
 [submodule "fastfetch"]
 	path = fastfetch
 	url = https://github.com/DanielBarton446/fastfetch
+[submodule "polybar"]
+	path = polybar
+	url = https://github.com/DanielBarton446/polybar.git
